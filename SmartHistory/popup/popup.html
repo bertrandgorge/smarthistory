@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body style="background: grey;">
+
+<div class="container" style="width:630px; height: 500px;">
+
+<div class="data">
+  <ul class="nav nav-pills" style="margin-top: 5px;">
+    <li class="active"><a href="#home" data-toggle="pill">Previous</a></li>
+    <li><a href="#statistics" data-toggle="pill">Statistics</a></li>
+  </ul>
+  <div class="tab-content">
+  
+  <div class="tab-pane active" id="home">
+    <div class="container">
+      <div class="row" data-bind="foreach: itemsArr">
+        <div class="thumbnail">
+          <div class="def-image">
+            <img data-bind="attr: { src: image }" alt="Capture should be here!">
+          </div>
+          <div class="def-infos">
+            <div class="def-title">
+              <a data-bind="text: title, attr: { href: url, target: '_blank' }"></a>
+            </div>
+            <div class="def-description"><p data-bind="text: description"></p></div>
+            <div class="def-table">
+              <table>
+                <tr>
+                  <td><a style="color: #6B6B47;" data-bind="text: domain,
+                    attr: { href: 'http://' + domain, title: domain, target: '_blank' }"></a></td>
+                  <td style="color: #6B6B47; text-align: right;" data-bind="text: last_access"></td>
+                </tr>
+              </table>
+            </div>
+            <div class="def-buttons" style="padding-top: 3px; text-align: right;">
+              <div class="dropdown div-inline">
+                <button class="btn btn-primary btn-xs dropdown-toggle" type="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Share
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                  <li><a class="fb" href="#" data-bind="attr: { url: url }">Facebook</a></li>
+                  <li><a class="tw" href="#" data-bind="attr: { url: url }">Twitter</a></li>
+                  <li><a class="ym" href="#" data-bind="attr: { url: url }">Yammer</a></li>
+                </ul>
+              </div>
+              <div class="dropdown div-inline">
+                <button class="btn btn-default btn-xs dropdown-toggle" type="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Remove
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                  <li><a class="removePage" href="#" data-bind="attr: { 'data-hash': hash }">Remove this page</a></li>
+                  <li><a class="removeDomain" href="#" data-bind="attr: { 'data-domain': domain }">Remove this domain</a></li>
+                </ul>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--<div class="tab-pane" id="options">-->
+  <!--  <div class="container-fluid">-->
+  <!--  <div class='row'>-->
+  <!--    <div class="stackone col-md-3">-->
+  <!--      <img src="http://lorempixum.com/200/200/city/7">-->
+  <!--    </div>-->
+  <!--    <div class="stacktwo col-md-3">-->
+  <!--      <img src="http://lorempixum.com/200/200/city/7">-->
+  <!--    </div>-->
+  <!--    <div class="stackthree col-md-3">-->
+  <!--      <img src="http://lorempixum.com/200/200/city/7">-->
+  <!--    </div>-->
+  <!--    <div class="stacktwo col-md-3">-->
+  <!--      <img src="http://lorempixum.com/200/200/city/7">-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--  </div>-->
+  <!--</div>-->
+</div>
+</div>
+
+<div id="def-bot-btns">
+  <button type="button" class="btn btn-primary btn-xs" id="more">More</button>
+  <button type="button" class="btn btn-default btn-xs" id="options">Options</button>
+</div>
+
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="../lib/knockout-3.3.0.js"></script>
+  <script src="../background.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

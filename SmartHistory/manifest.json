@@ -1,0 +1,67 @@
+{
+  "manifest_version": 1,
+  
+  "name": "SmartHistory",
+  "version": "0.0.1",
+  "description": "A better history",
+  
+  "permissions": [
+    "<all_urls>",
+    "tabs",
+    "activeTab"
+  ],
+  
+  "browser_action": {
+    "default_title": "Click Me",
+    "default_popup": "popup/popup.html",
+    "default_icon": "img/Logo_16px.png"
+  },
+  
+  "icons": { 
+  	"16": "img/Logo_16px.png",
+    "48": "img/Logo_48px.png",
+    "128": "img/Logo_128px.png" 
+  },
+          
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentscript.js"]
+    }
+  ],
+  
+  "background": {
+    "scripts": ["getHash.js", "background.js"]
+  },
+  
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://ajax.googleapis.com https://maxcdn.bootstrapcdn.com https://cdnjs.cloudflare.com; object-src 'self'"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="More">
+  <link rel="icon" href="../img/Logo_16px.png">    
+
+  <title>All | SmartHistory</title>
+  <!-- Bootstrap -->
+  <link href="../lib/bootstrap.min.css" rel="stylesheet">
+  <link href="more.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <!--<div class="container">-->
+      <div class="navbar-header">
+        <button type="button"
+                class="navbar-toggle collapsed"
+                data-toggle="collapse"
+                data-target="#navbar"
+                aria-expanded="false"
+                aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <!--<img alt="Brand" src="../img/Logo_48px.png">-->
+          <b>SmartHistory</b>
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#history">History</a></li>
+          <li><a href="../opt/options.html">Options</a></li>
+          <li><a href="#statistics">Statistics</a></li>
+        </ul>
+      
+      </div>
+    <!--</div>-->
+  </nav>
+  
+  
+  
+  
+  
+  
+  
+  <div class="container">
+    <div class="row col-md-offset-1" data-bind="foreach: itemsArr">
+      <div class="custom-container">
+        <div class="custom-img"><img data-bind="attr: { src: image }" alt="Image"></div>
+        <div class="custom-info">
+          <div class="custom-title"><a data-bind="text: title, attr: { href: url, target: '_blank' }"></a></div>
+          <div class="custom-description"><p data-bind="text: description"></p></div>
+          <div class="custom-table"><table style="width: 100%;"><tr>
+              <td style="width: 50%"><a style="color: #646567;" data-bind="text: domain, attr: { href: 'http://' + domain, title: domain, target: '_blank' }"></a></td>
+              <td style="text-align: right;" data-bind="text: last_access"></td>
+          </tr></table></div>
+          <div class="custom-buttons">
+            <div class="dropdown div-inline">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Share <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="fb" href="#" data-bind="attr: { url: url }">Facebook</a></li>
+                <li><a class="tw" href="#" data-bind="attr: { url: url }">Twitter</a></li>
+                <li><a class="ym" href="#" data-bind="attr: { url: url }">Yammer</a></li>
+              </ul>
+            </div>
+            <div class="dropdown div-inline">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Remove <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="removePage" href="#" data-bind="attr: { 'data-hash': hash }">Remove this page</a></li>
+                <li><a class="removeDomain" href="#" data-bind="attr: { 'data-domain': domain }">Remove this domain</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--    <footer class="footer">
+    </footer>-->
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../lib/bootstrap.min.js"></script>
+    <script src="../lib/knockout-3.3.0.js"></script>
+    <script src="../background.js"></script>
+    <script src="more.js"></script>
+  </body>
+</html>

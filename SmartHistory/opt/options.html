@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Options | SmartHistory</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+<div class="container">
+  <!--<form></form>-->
+  <div class="col-md-12" style="margin-top: 50px;">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Social Network - <b style="color: grey;">SmartHistory</b></h3>
+      </div>
+      <div class="panel-body">
+        <p><b>Tips:</b> Choose the social networks with which you want to share your navigation history.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+  <div class="panel panel-default">
+    
+    <div class="panel-heading">
+      <h3 class="panel-title">Blacklist - <b style="color: grey;">SmartHistory</b></h3>
+    </div>
+    
+    <div class="panel-body" style="height: 70px;">
+      <p><b>Tips:</b> All websites in the blacklist are listed below, you can add or delete them from this page.</p>
+    </div>
+    
+    <table class="table">
+      <thead>
+        <div class="input-group" style="margin: 10px 40px;">
+          <input id="input-b"
+                 type="text"
+                 class="form-control"
+                 placeholder="Enter the url that you wanna add to blacklist">
+          <span class="input-group-btn">
+            <button id="submit-b" class="btn btn-primary" type="button">Submit</button>
+          </span>
+        </div>
+      </thead>
+      <tbody data-bind="foreach: blacklist">
+        <tr>
+          <td class="url-container" style="max-width: 180px;" data-bind="text: $data, attr: {title: $data}"></td>
+          <td style="background: inherit;">
+            <button
+              class="btn btn-danger btn-xs pull-right delete-b"
+              type="button"
+              style="width: 90px;"
+              data-bind="attr: {'data-url': $data}">
+            Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+<!--  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Whitelist - <b style="color: grey;">SmartHistory</b></h3>
+      </div>
+      <div class="panel-body" style="height: 70px;">
+        <p><b>Tips:</b> All websites in the whitelist are listed below, you can add or delete them from this page.</p>
+      </div>
+      <table class="table">
+        <thead>
+          <div class="input-group" style="margin: 10px 40px;">
+            <input id="input-w"
+                   type="text"
+                   class="form-control"
+                   placeholder="Enter the url that you wanna add to whitelist">
+            <span class="input-group-btn">
+              <button id="submit-w" class="btn btn-primary" type="button">Submit</button>
+            </span>
+          </div>
+        </thead>
+        <tbody data-bind="foreach: whitelist">
+          <tr>
+            <td class="url-container" style="max-width: 400px;" data-bind="text: $data, attr: {title: $data}"></td>
+            <td style="background: inherit;">
+              <button
+                class="btn btn-danger btn-xs pull-right delete-w"
+                type="button"
+                style="width: 90px;"
+                data-bind="attr: {'data-url': $data}">
+              Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>-->
+</div>
+  
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="../background.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
